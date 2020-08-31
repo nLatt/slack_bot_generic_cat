@@ -1,2 +1,2 @@
-# slack_bot_generic_cat
+# Generic Cat
 Cats are the rulers of humanity!

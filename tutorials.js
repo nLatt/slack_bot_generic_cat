@@ -15,7 +15,7 @@ const app = new App({
 
 
 
-const current_time = new Date().toTimeString().slice(0, 5);
+const current_time = new Date().toTimeString().slice(0, 7);
 
 app.event('app_home_opened', async ({ event, context }) => {
   try {

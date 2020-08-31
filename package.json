@@ -17,6 +17,6 @@
   },
   "homepage": "https://github.com/nLatt/slack_bot_generic_cat#readme",
   "dependencies": {
-    "@slack/bolt": "^2.3.0",
+    "@slack/bolt": "^2.3.0"
   }
 }

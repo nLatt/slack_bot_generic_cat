@@ -1,20 +1,49 @@
-const { WebClient } = require("@slack/web-api");
+const { App } = require("@slack/bolt");
 
-const web = new WebClient(process.env.SLACK_TOKEN);
+
+const app = new App({
+  token: process.env.SLACK_BOT_TOKEN,
+  signingSecret: process.env.SLACK_SIGNING_SECRET
+});
+
+(async () => {
+  // Start your app
+  await app.start(process.env.PORT || 3000);
+
+  console.log('⚡️ Bolt app is running!');
+})();
+
+
 
 const current_time = new Date().toTimeString().slice(0, 5);
 
-(async () => {
-
+app.event('app_home_opened', async ({ event, context }) => {
   try {
-    await web.chat.postMessage({
-      channel: "#testing",
-      text: `The current time in Cat-topia is ${current_time}!`,
-    });
+    /* view.publish is the method that your app uses to push a view to the Home tab */
+    const result = await app.client.views.publish({
+
+      /* retrieves your xoxb token from context */
+      token: context.botToken,
+
+      /* the user that opened your app's app home */
+      user_id: event.user,
+
+      /* the view object that appears in the app home*/
+      view: {
+        type: 'home',
+        callback_id: 'home_view',
+
+        /* body of the view */
+        blocks: [
+          {
+            "type": "section",
+            "text": {
+              "type": "mrkdwn",
+              "text": current_time
+            }
+          }
+
   } catch (error) {
-    console.log(error);
+    console.error(error);
   }
-
-
-  console.log("Message posted!")
-})();
+});

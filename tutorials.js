@@ -42,7 +42,9 @@ app.event('app_home_opened', async ({ event, context }) => {
               "text": current_time
             }
           }
-
+        ]
+      }
+    });
   } catch (error) {
     console.error(error);
   }

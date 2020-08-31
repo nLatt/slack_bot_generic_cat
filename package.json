@@ -18,7 +18,5 @@
   "homepage": "https://github.com/nLatt/slack_bot_generic_cat#readme",
   "dependencies": {
     "@slack/bolt": "^2.3.0",
-    "@slack/events-api": "^2.3.4",
-    "@slack/web-api": "^5.11.0"
   }
 }

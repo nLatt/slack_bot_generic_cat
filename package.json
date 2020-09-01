@@ -1,0 +1,22 @@
+{
+  "name": "slack_bot_generic_cat",
+  "version": "1.0.0",
+  "description": "Cats are the rulers of humanity!",
+  "main": "cat.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/nLatt/slack_bot_generic_cat.git"
+  },
+  "author": "Nicolas Lattemann",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/nLatt/slack_bot_generic_cat/issues"
+  },
+  "homepage": "https://github.com/nLatt/slack_bot_generic_cat#readme",
+  "dependencies": {
+    "@slack/web-api": "^5.11.0"
+  }
+}
